@@ -32,7 +32,6 @@ class _ExplorePageState extends State<ExplorePage> {
                   height: 50,
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: ColorPink,
                         shadowColor: ColorPink,
                         elevation: 15,
                       ),

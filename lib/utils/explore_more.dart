@@ -1,12 +1,12 @@
 import 'package:exploreapp_ui/Screens/detailscreen.dart';
 import 'package:exploreapp_ui/utils/constants.dart';
-import 'package:exploreapp_ui/utils/exploremore_data.dart';
+import 'package:exploreapp_ui/utils/datas.dart';
 import 'package:figma_squircle/figma_squircle.dart';
 import 'package:flutter/material.dart';
 import 'package:shadow_overlay/shadow_overlay.dart';
 
 class ExploreMore extends StatelessWidget {
-  final _explorelist = Explore.exploreList();
+  final _explorelist = Explore.exploreList(); //obj
   final _pagectrl = PageController(viewportFraction: 0.9);
   ExploreMore({Key? key}) : super(key: key);
 
@@ -17,7 +17,7 @@ class ExploreMore extends StatelessWidget {
       controller: _pagectrl,
       itemCount: _explorelist.length,
       itemBuilder: ((context, index) {
-        var explore = _explorelist[index];
+        var explore = _explorelist[index]; //var ,pass index
         return GestureDetector(
           onTap: () {
             Navigator.push(

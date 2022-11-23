@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:page_route_animator/page_route_animator.dart';
 
-import 'package:exploreapp_ui/Screens/explore.dart';
+import 'package:exploreapp_ui/Screens/2ndexplore.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

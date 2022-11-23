@@ -1,6 +1,6 @@
 import 'package:exploreapp_ui/Screens/homescreen.dart';
 import 'package:exploreapp_ui/utils/constants.dart';
-import 'package:exploreapp_ui/utils/exploremore_data.dart';
+import 'package:exploreapp_ui/utils/datas.dart';
 import 'package:flutter/material.dart';
 import 'package:figma_squircle/figma_squircle.dart';
 
@@ -25,9 +25,9 @@ class DetailScreen extends StatelessWidget {
               )
             ],
           ),
-          Positioned(
-              top: 60,
-              left: 25,
+          Padding(
+              padding: EdgeInsets.only(
+                  left: 25, top: MediaQuery.of(context).padding.top),
               child: GestureDetector(
                 onTap: () {
                   Navigator.pop(context,
@@ -62,7 +62,10 @@ class DetailScreen extends StatelessWidget {
 
   Widget _buildDetail() {
     return Container(
-      color: ColorWhite,
+      padding: EdgeInsets.only(top: 10),
+      decoration: BoxDecoration(
+          color: ColorWhite,
+          borderRadius: BorderRadius.only(topLeft: Radius.circular(35))),
       child: Column(
         children: [
           _buildUserInfo(),
@@ -177,30 +180,45 @@ class DetailSliverDelegate extends SliverPersistentHeaderDelegate {
     return Stack(
       children: [
         Opacity(
-          opacity: 0.9,
-          child: Image.asset(
-            explore.ImagePath,
-            width: MediaQuery.of(context).size.width,
-            height: expandedHeight,
-            fit: BoxFit.cover,
+          opacity: 1,
+          child: Container(
+            child: Image.asset(
+              // filterQuality: FilterQuality.high,
+              cacheHeight: 80,
+              // cacheWidth: 90,
+              // semanticLabel: ,
+              // centerSlice: Rect.fromCircle(center: Offset(1, 1), radius: 5),
+              explore.ImagePath,
+              width: MediaQuery.of(context).size.width,
+              height: expandedHeight,
+              fit: BoxFit.cover,
+            ),
+            decoration: BoxDecoration(
+                color: ColorBlack,
+                borderRadius:
+                    BorderRadius.only(bottomLeft: Radius.circular(35))),
           ),
         ),
-        Positioned(
-            top: expandedHeight -
-                roundContainerHeight -
-                shrinkOffset, //shrinkoffset
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: roundContainerHeight,
-              decoration: ShapeDecoration(
-                  color: ColorWhite,
-                  shape: SmoothRectangleBorder(
-                      borderRadius: SmoothBorderRadius.only(
-                          topLeft: SmoothRadius(
-                              cornerRadius: 25, cornerSmoothing: 1),
-                          topRight: SmoothRadius(
-                              cornerRadius: 25, cornerSmoothing: 1)))),
-            )),
+        // Positioned(
+        //     top: expandedHeight -
+        //         roundContainerHeight -
+        //         shrinkOffset, //shrinkoffset
+        //     child: Container(
+        //       width: MediaQuery.of(context).size.width,
+        //       height: roundContainerHeight,
+        //       decoration: ShapeDecoration(
+        //           color: ColorWhite,
+        //           shape: SmoothRectangleBorder(
+        //               borderRadius: SmoothBorderRadius.only(
+        //                   // topLeft: SmoothRadius(
+        //                   //     cornerRadius: 25, cornerSmoothing: 1),
+        //                   // topRight: SmoothRadius(
+        //                   //     cornerRadius: 25, cornerSmoothing: 1),
+        //                   bottomLeft: SmoothRadius(
+        //                       cornerRadius: 25, cornerSmoothing: 1),
+        //                   bottomRight: SmoothRadius(
+        //                       cornerRadius: 25, cornerSmoothing: 1)))),
+        //     )),
         Positioned(
             top: expandedHeight - shrinkOffset - 120,
             left: 25,

@@ -24,7 +24,7 @@ const TextTheme TextThemeDefault = TextTheme(
   bodyText1:
       TextStyle(color: ColorWhite, fontSize: 25, fontWeight: FontWeight.w500),
   // bodyText2:
-  //     TextStyle(color: ColorWhite, fontSize: 25, fontWeight: FontWeight.w500),  Texts of categories visible while uncommenting ,no error in debug console
+  //     TextStyle(color: ColorWhite, fontSize: 16, fontWeight: FontWeight.w500),
   caption:
       TextStyle(color: ColorWhite, fontSize: 16, fontWeight: FontWeight.w300),
 );
