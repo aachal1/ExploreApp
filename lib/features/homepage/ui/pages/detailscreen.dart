@@ -1,11 +1,12 @@
-import 'package:exploreapp_ui/Screens/homescreen.dart';
-import 'package:exploreapp_ui/utils/constants.dart';
-import 'package:exploreapp_ui/utils/datas.dart';
+import 'package:exploreapp_ui/common/dummy_data.dart';
+import 'package:exploreapp_ui/features/homepage/ui/pages/homescreen.dart';
+import 'package:exploreapp_ui/common/constants.dart';
+import 'package:exploreapp_ui/features/category/model/category_model.dart';
 import 'package:flutter/material.dart';
 import 'package:figma_squircle/figma_squircle.dart';
 
 class DetailScreen extends StatelessWidget {
-  final Explore explore;
+  final CategoryModel explore;
   final double expandedHeight = 300;
   final double roundContainerHeight = 50;
 
@@ -128,7 +129,7 @@ class DetailScreen extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(50),
             child: Image.asset(
-              explore.ImagePath,
+              explore.image,
               width: 40,
               height: 40,
               fit: BoxFit.cover,
@@ -140,11 +141,11 @@ class DetailScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  explore.Name,
+                  explore.name,
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                 ),
                 Text(
-                  explore.Location,
+                  explore.location,
                   style: TextStyle(
                     fontSize: 12,
                   ),
@@ -164,7 +165,7 @@ class DetailScreen extends StatelessWidget {
 }
 
 class DetailSliverDelegate extends SliverPersistentHeaderDelegate {
-  final Explore explore;
+  final CategoryModel explore;
   final double expandedHeight;
   final double roundContainerHeight;
 
@@ -188,7 +189,7 @@ class DetailSliverDelegate extends SliverPersistentHeaderDelegate {
               // cacheWidth: 90,
               // semanticLabel: ,
               // centerSlice: Rect.fromCircle(center: Offset(1, 1), radius: 5),
-              explore.ImagePath,
+              explore.image,
               width: MediaQuery.of(context).size.width,
               height: expandedHeight,
               fit: BoxFit.cover,
@@ -199,26 +200,22 @@ class DetailSliverDelegate extends SliverPersistentHeaderDelegate {
                     BorderRadius.only(bottomLeft: Radius.circular(35))),
           ),
         ),
-        // Positioned(
-        //     top: expandedHeight -
-        //         roundContainerHeight -
-        //         shrinkOffset, //shrinkoffset
-        //     child: Container(
-        //       width: MediaQuery.of(context).size.width,
-        //       height: roundContainerHeight,
-        //       decoration: ShapeDecoration(
-        //           color: ColorWhite,
-        //           shape: SmoothRectangleBorder(
-        //               borderRadius: SmoothBorderRadius.only(
-        //                   // topLeft: SmoothRadius(
-        //                   //     cornerRadius: 25, cornerSmoothing: 1),
-        //                   // topRight: SmoothRadius(
-        //                   //     cornerRadius: 25, cornerSmoothing: 1),
-        //                   bottomLeft: SmoothRadius(
-        //                       cornerRadius: 25, cornerSmoothing: 1),
-        //                   bottomRight: SmoothRadius(
-        //                       cornerRadius: 25, cornerSmoothing: 1)))),
-        //     )),
+        Positioned(
+            top: expandedHeight -
+                roundContainerHeight -
+                shrinkOffset, //shrinkoffset
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: roundContainerHeight,
+              decoration: ShapeDecoration(
+                  color: ColorWhite,
+                  shape: SmoothRectangleBorder(
+                      borderRadius: SmoothBorderRadius.only(
+                    topLeft: SmoothRadius(cornerRadius: 25, cornerSmoothing: 1),
+                    topRight:
+                        SmoothRadius(cornerRadius: 25, cornerSmoothing: 1),
+                  ))),
+            )),
         Positioned(
             top: expandedHeight - shrinkOffset - 120,
             left: 25,
@@ -226,7 +223,7 @@ class DetailSliverDelegate extends SliverPersistentHeaderDelegate {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  explore.Name,
+                  explore.name,
                   style: text.textTheme.bodyText1,
                 ),
                 Row(
@@ -240,7 +237,7 @@ class DetailSliverDelegate extends SliverPersistentHeaderDelegate {
                       width: 5,
                     ),
                     Text(
-                      explore.Location,
+                      explore.location,
                       style: text.textTheme.caption,
                     ),
                   ],
@@ -280,7 +277,7 @@ class DetailSliverDelegate extends SliverPersistentHeaderDelegate {
 }
 
 class FeaturedWidget extends StatelessWidget {
-  final _list = Explore.exploreList();
+  final _list = DummyData.exploreList;
   @override
   Widget build(Object context) {
     return ListView.separated(
@@ -290,7 +287,7 @@ class FeaturedWidget extends StatelessWidget {
           var explore = _list[index];
           return Container(
             width: 120,
-            child: Image.asset(explore.ImagePath, fit: BoxFit.cover),
+            child: Image.asset(explore.image, fit: BoxFit.cover),
           );
         },
         separatorBuilder: (_, index) => SizedBox(width: 10),

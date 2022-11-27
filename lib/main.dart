@@ -1,10 +1,7 @@
-// import 'dart:html';
-
-import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:exploreapp_ui/Screens/splashscreen.dart';
-import 'package:exploreapp_ui/utils/constants.dart';
+import 'package:exploreapp_ui/features/splash/splashscreen.dart';
+import 'package:exploreapp_ui/common/constants.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,14 +13,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = window.physicalSize.width;
+    // double screenWidth = window.physicalSize.width;
     return MaterialApp(
         home: SplashScreen(),
         debugShowCheckedModeBanner: false,
         title: "Explore App",
-        theme: ThemeData(
-            primarySwatch: Colors.pink,
-            textTheme:
-                screenWidth < 500 ? TextThemeDefault : TextThemeDefault));
+        theme:
+            ThemeData(primarySwatch: Colors.pink, textTheme: TextThemeDefault));
   }
 }

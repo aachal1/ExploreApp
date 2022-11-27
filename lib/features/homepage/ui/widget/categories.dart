@@ -1,7 +1,5 @@
-import 'package:exploreapp_ui/Screens/categories_list/categoryscreen.dart';
-import 'package:exploreapp_ui/utils/carousel.dart';
-import 'package:exploreapp_ui/utils/constants.dart';
-import 'package:exploreapp_ui/utils/datas.dart';
+import 'package:exploreapp_ui/features/category/ui/pages/categoryscreen.dart';
+import 'package:exploreapp_ui/features/category/model/category_model.dart';
 import 'package:flutter/material.dart';
 import 'package:figma_squircle/figma_squircle.dart';
 
@@ -9,12 +7,14 @@ class Categories extends StatelessWidget {
   final categoryIcon;
   final String catergoryName;
   final Color color;
-  Categories({
-    Key? key,
-    required this.categoryIcon,
-    required this.catergoryName,
-    required this.color,
-  }) : super(key: key);
+  List<CategoryModel> list;
+  Categories(
+      {Key? key,
+      required this.categoryIcon,
+      required this.catergoryName,
+      required this.color,
+      required this.list})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,10 @@ class Categories extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => CategoryList(),
+                    builder: (context) => CategoryList(
+                      list: list,
+                      name: catergoryName,
+                    ),
                   ));
             },
             child: Container(

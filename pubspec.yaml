@@ -41,6 +41,9 @@ dependencies:
   figma_squircle: ^0.5.3
   shadow_overlay: ^1.0.5
   carousel_slider: ^4.1.1
+  background_app_bar: ^2.0.1
+  fluttericon: ^2.0.0
+  like_button: ^2.0.5
 
 
 dev_dependencies:

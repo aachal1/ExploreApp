@@ -1,12 +1,11 @@
-import 'package:exploreapp_ui/Screens/detailscreen.dart';
-import 'package:exploreapp_ui/utils/constants.dart';
-import 'package:exploreapp_ui/utils/datas.dart';
-import 'package:figma_squircle/figma_squircle.dart';
+import 'package:exploreapp_ui/common/dummy_data.dart';
+import 'package:exploreapp_ui/features/homepage/ui/pages/detailscreen.dart';
+import 'package:exploreapp_ui/common/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:shadow_overlay/shadow_overlay.dart';
 
 class ExploreMore extends StatelessWidget {
-  final _explorelist = Explore.exploreList(); //obj
+  final _explorelist = DummyData.exploreList; //obj
   final _pagectrl = PageController(viewportFraction: 0.9);
   ExploreMore({Key? key}) : super(key: key);
 
@@ -39,7 +38,7 @@ class ExploreMore extends StatelessWidget {
                     shadowHeight: 200,
                     shadowWidth: 500,
                     child: Image.asset(
-                      explore.ImagePath,
+                      explore.image,
                       width: double.infinity,
                       height: double.infinity,
                       fit: BoxFit.cover,
@@ -54,7 +53,7 @@ class ExploreMore extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        explore.Name,
+                        explore.name,
                         style: text.textTheme.bodyText1,
                       ),
                       SizedBox(
@@ -70,7 +69,7 @@ class ExploreMore extends StatelessWidget {
                           SizedBox(
                             width: 5,
                           ),
-                          Text(explore.Location, style: text.textTheme.caption),
+                          Text(explore.location, style: text.textTheme.caption),
                         ],
                       )
                     ],

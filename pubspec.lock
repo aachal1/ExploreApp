@@ -8,6 +8,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.9.0"
+  background_app_bar:
+    dependency: "direct main"
+    description:
+      name: background_app_bar
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.1"
   boolean_selector:
     dependency: transitive
     description:
@@ -95,6 +102,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  fluttericon:
+    dependency: "direct main"
+    description:
+      name: fluttericon
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   google_fonts:
     dependency: "direct main"
     description:
@@ -116,6 +130,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.2"
+  like_button:
+    dependency: "direct main"
+    description:
+      name: like_button
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.5"
   matcher:
     dependency: transitive
     description:

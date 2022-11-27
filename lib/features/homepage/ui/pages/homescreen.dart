@@ -1,8 +1,7 @@
-import 'dart:ui';
-
-import 'package:exploreapp_ui/utils/categories.dart';
-import 'package:exploreapp_ui/utils/constants.dart';
-import 'package:exploreapp_ui/utils/explore_more.dart';
+import 'package:exploreapp_ui/common/dummy_data.dart';
+import 'package:exploreapp_ui/features/homepage/ui/widget/categories.dart';
+import 'package:exploreapp_ui/common/constants.dart';
+import 'package:exploreapp_ui/features/homepage/ui/widget/explore_more.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter/src/foundation/key.dart';
 // import 'package:flutter/src/widgets/framework.dart';
@@ -29,20 +28,6 @@ class _HomeScreenState extends State<HomeScreen> {
     final ThemeData text = Theme.of(context);
     return Scaffold(
       backgroundColor: ColorWhite,
-      // appBar: AppBar(
-      //   backgroundColor: Colors.white,
-      //   elevation: 0,
-      //   actions: [
-      //     Padding(
-      //       padding: const EdgeInsets.only(right: 14.0),
-      //       child: Icon(
-      //         Icons.person_rounded,
-      //         size: 30,
-      //         color: Color.fromARGB(255, 21, 21, 21),
-      //       ),
-      //     ),
-      //   ],
-      // ),
       bottomNavigationBar: ClipRRect(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20),
@@ -159,27 +144,28 @@ class _HomeScreenState extends State<HomeScreen> {
                       Categories(
                           categoryIcon: Icons.beach_access_rounded,
                           catergoryName: 'Beach',
+                          list: DummyData.beachList,
                           color: Color.fromARGB(255, 78, 202, 255)),
                       Categories(
                           categoryIcon: Icons.forest_sharp,
                           catergoryName: 'Forest',
+                          list: DummyData.forestList,
                           color: Color.fromARGB(255, 78, 255, 93)),
                       Categories(
                           categoryIcon: Icons.hotel_class_rounded,
                           catergoryName: 'Hotel',
+                          list: DummyData.forestList,
                           color: Color.fromARGB(255, 255, 106, 106)),
                       Categories(
                           categoryIcon: Icons.air,
-                          catergoryName: 'Dessert',
+                          catergoryName: 'Desert',
+                          list: DummyData.forestList,
                           color: Color.fromARGB(255, 255, 231, 78)),
                       Categories(
                           categoryIcon: Icons.restaurant_outlined,
                           catergoryName: 'Restaurants',
+                          list: DummyData.forestList,
                           color: Color.fromARGB(255, 239, 117, 255)),
-                      Categories(
-                          categoryIcon: Icons.beach_access_rounded,
-                          catergoryName: 'Beach',
-                          color: Color.fromARGB(255, 78, 175, 255)),
                     ],
                   )),
               SizedBox(

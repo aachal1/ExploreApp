@@ -1,7 +1,7 @@
 import 'dart:ui';
 
-import 'package:exploreapp_ui/Screens/homescreen.dart';
-import 'package:exploreapp_ui/utils/constants.dart';
+import 'package:exploreapp_ui/features/homepage/ui/pages/homescreen.dart';
+import 'package:exploreapp_ui/common/constants.dart';
 import 'package:flutter/material.dart';
 
 class ExplorePage extends StatefulWidget {
